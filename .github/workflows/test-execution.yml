@@ -52,8 +52,8 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./target/allure-report
 
-      - name: Upload Allure Report Artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: allure-report
-          path: target/allure-report
+#      - name: Upload Allure Report Artifact
+#        uses: actions/upload-artifact@v4
+#        with:
+#          name: allure-report
+#          path: target/allure-report
