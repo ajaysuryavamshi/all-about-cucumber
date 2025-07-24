@@ -86,11 +86,24 @@ Then the user should be redirected to the dashboard
 
 ## Running Tests
 
-To run all tests with Maven:
+
+<pre>
+### To run all tests with Maven:
 mvn test
 
-To run with TestNG:
+### To run with TestNG:
 mvn test -DsuiteXmlFile=testng.xml
+
+### Run Tests by Tag
+
+Use the <code>-Dcucumber.filter.tags</code> system property to target specific tagged scenarios.
+
+#### Example: Run Regression Suite
+Run all scenarios tagged with <code>@regression</code>:
+
+<code>mvn clean test -Dcucumber.filter.tags="@regression"</code>
+<code>mvn clean test -DsuiteXmlFile=testng.xml -Dcucumber.filter.tags="@regression"</code>
+</pre>
 
 Reports (optionally add HTML reports via plugins) will be generated in the target directory.
 
