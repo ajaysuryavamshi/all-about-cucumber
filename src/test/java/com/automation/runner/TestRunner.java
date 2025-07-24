@@ -17,7 +17,7 @@ import org.testng.annotations.DataProvider;
 )
 public class TestRunner extends AbstractTestNGCucumberTests {
     static {
-        String tag = System.getProperty("cucumber.filter.tags", "@smoke");
+        String tag = System.getProperty("cucumber.filter.tags", "@regression");
         System.setProperty("cucumber.filter.tags", tag);
     }
     @Override

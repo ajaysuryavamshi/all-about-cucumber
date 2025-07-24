@@ -1,4 +1,4 @@
-@user_management @regression
+@user_management
 Feature: Add User in OrangeHRM
 
   Scenario Outline: Admin adds a new user with valid details
@@ -15,6 +15,7 @@ Feature: Add User in OrangeHRM
     And clicks the Save button
     Then the new user "<username>" should be present in the user list
 
+    @regression
     Examples:
       | userRole | employee     | status   | username     | password   | confirmpass |
       | ESS      | Linda Jane   | Enabled  | testuser01   | Pass@1234  | Pass@1234   |
