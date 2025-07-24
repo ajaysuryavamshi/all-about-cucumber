@@ -32,6 +32,7 @@ jobs:
         run: mvn clean test -DsuiteXmlFile=testng.xml
 
       - name: Install Allure Commandline
+        if: always()
         run: |
           brew install allure || true   # (macOS runner) or
           sudo apt-get update && sudo apt-get install -y wget unzip
@@ -40,10 +41,12 @@ jobs:
           echo "$HOME/.allure/allure-2.21.0/bin" >> $GITHUB_PATH
 
       - name: Generate Allure Report
+        if: always()
         run: |
           allure generate allure-results --clean -o target/allure-report
       
       - name: Deploy Allure Report to GitHub Pages
+        if: always()
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
