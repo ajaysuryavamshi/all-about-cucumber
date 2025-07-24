@@ -32,6 +32,10 @@ public class DriverFactory {
         return switch (browser) {
             case "CHROME" -> {
                 ChromeOptions chromeOptions = new ChromeOptions();
+                chromeOptions.addArguments("--headless=new");
+                chromeOptions.addArguments("--no-sandbox");
+                chromeOptions.addArguments("--disable-dev-shm-usage");
+                chromeOptions.addArguments("--window-size=1920,1080");
                 yield new ChromeDriver(chromeOptions);
             }
             case "FIREFOX" -> {
