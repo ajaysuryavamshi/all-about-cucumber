@@ -1,0 +1,6 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Thu Jul 24 17:06:58 UTC 2025","Thu Jul 24 17:07:08 UTC 2025","10073","","OrangeHRM Login","","Login attempt with various credentials","","Login attempt with various credentials",""
+"passed","Thu Jul 24 17:06:58 UTC 2025","Thu Jul 24 17:07:08 UTC 2025","9956","","OrangeHRM Login","","Login attempt with various credentials","","Login attempt with various credentials",""
+"broken","Thu Jul 24 17:06:58 UTC 2025","Thu Jul 24 17:07:39 UTC 2025","40999","","Add User in OrangeHRM","","Admin adds a new user with valid details","","Admin adds a new user with valid details",""
+"broken","Thu Jul 24 17:06:58 UTC 2025","Thu Jul 24 17:07:38 UTC 2025","40914","","Add User in OrangeHRM","","Admin adds a new user with valid details","","Admin adds a new user with valid details",""
+"passed","Thu Jul 24 17:06:58 UTC 2025","Thu Jul 24 17:07:07 UTC 2025","9851","","OrangeHRM Login","","Login attempt with various credentials","","Login attempt with various credentials",""
