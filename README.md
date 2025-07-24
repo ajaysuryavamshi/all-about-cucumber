@@ -1,8 +1,10 @@
 # All About Cucumber
 
-A sample Behavior-Driven Development (BDD) framework using Cucumber, Java, and TestNG. This repository demonstrates best practices for writing maintainable, automated acceptance tests using Gherkin syntax, and can be used as a foundation for both learning and scaling up BDD projects.
+A scalable and maintainable Behavior-Driven Development (BDD) framework using **Cucumber**, **Java**, and **TestNG**. This repository illustrates automation best practices for writing expressive and reliable acceptance tests using **Gherkin syntax**. It can serve as a learning aid or a strong foundation for real-world BDD projects.
 
-## Table of Contents
+---
+
+## 📚 Table of Contents
 
 - [About](#about)
 - [Features](#features)
@@ -10,112 +12,174 @@ A sample Behavior-Driven Development (BDD) framework using Cucumber, Java, and T
 - [Project Structure](#project-structure)
 - [Writing Scenarios](#writing-scenarios)
 - [Running Tests](#running-tests)
+- [Test Report](#test-report)
 - [Contributing](#contributing)
 - [License](#license)
 
-## About
+---
+
+## 📌 About
 
 This project aims to:
-- Illustrate how to integrate Cucumber with Java and TestNG for BDD.
-- Showcase best practices for feature file organization, step definition, and test automation.
-- Serve as a learning tool or a base framework for extending BDD automation projects.
 
-## Features
+- Integrate Cucumber with Java and TestNG for structured BDD test automation.
+- Demonstrate clean coding practices for scalable test suites.
+- Serve as a boilerplate for expanding into UI, API, or hybrid automation frameworks.
 
-- Write executable specifications in Gherkin (.feature files).
-- Step definitions in Java for mapping Gherkin steps to code.
-- Organized directory structure for scalability.
-- Test execution managed by TestNG.
-- Easily extensible for UI/API testing.
+---
 
-## Getting Started
+## ✨ Features
 
-### Prerequisites
+- ✅ Executable Gherkin specifications (`.feature` files)
+- ✅ Step Definitions using Java
+- ✅ Page Object Model for UI interaction layers
+- ✅ Parallel test execution support with TestNG
+- ✅ Integrated with **Allure** for rich reporting
+- ✅ Tag-based selective test execution
+- ✅ Clean and extensible Maven project structure
 
-- Java JDK 8 or higher
+---
+
+## 🚀 Getting Started
+
+### ✅ Prerequisites
+
+- Java JDK 17+
 - Maven 3.6+
 - Git
 
-### Setup
+### ⚙️ Setup Instructions
 
 1. Clone the repository:
-   git clone https://github.com/ajaysuryavamshi/all-about-cucumber.git cd all-about-cucumber 
-2. Install dependencies:
-   mvn clean install
-## Project Structure
-<pre>
-<code>
+
+    ```bash
+    git clone https://github.com/ajaysuryavamshi/all-about-cucumber.git
+    cd all-about-cucumber
+    ```
+
+2. Build the project and install dependencies:
+
+    ```bash
+    mvn clean install
+    ```
+
+---
+
+## 🗂️ Project Structure
+
+```text
 all-about-cucumber/
 ├── src/
 │   ├── main/
 │   │   └── java/
 │   │       └── com/
 │   │           └── automation/
-│   │               └── config/              # Config utilities
-│   │               └── drivers/             # Driver utilities
+│   │               ├── config/             # Config utilities
+│   │               └── drivers/            # Driver utilities
 │   ├── test/
 │   │   └── java/
 │   │       └── com/
 │   │           └── automation/
-│   │               └── pages/               # Page Object Model classes
-│   │               └── runner/              # TestNG or JUnit runners
-│   │               └── steps/               # Cucumber step definitions and Hooks
+│   │               ├── pages/              # Page Object Model classes
+│   │               ├── runner/             # TestNG runners
+│   │               └── steps/              # Cucumber step definitions & Hooks
 │   └── resources/
-│       ├── features/                     # Cucumber feature files
-│       └── config/                       # Environment/Test configs (e.g., dev, qa)
-├── testng.xml                            # TestNG suite file
-├── pom.xml                               # Maven configuration
-├── README.md                             # Project documentation
-└── allure-results/                       # Allure report output (in .gitignore)
-</code>
-</pre>
+│       ├── features/                       # Cucumber feature files
+│       └── config/                         # Environment/test configuration files
+├── testng.xml                              # TestNG suite configuration
+├── pom.xml                                 # Maven project definition
+├── README.md                               # Project documentation
+└── allure-results/                         # Allure test results (output directory)
+```
 
-## Writing Scenarios
+---
 
-All user journeys (test cases) are written as `.feature` files using Gherkin syntax. Example:
+## ✍️ Writing Scenarios
 
+Scenarios are written in `.feature` files using [Gherkin](https://cucumber.io/docs/gherkin/) syntax.
+
+**Example:**
+
+```gherkin
 Feature: User Login
 
-Scenario: Successful login with valid credentials 
+  Scenario: Successful login with valid credentials
+    Given the user is on the login page
+    When the user enters valid credentials
+    Then the user should be redirected to the dashboard
+```
 
-Given the user is on the login page
+Organize related scenarios within domain-specific feature files under `src/test/resources/features/`.
 
-When the user enters valid credentials
+---
 
-Then the user should be redirected to the dashboard
+## 🧪 Running Tests
 
-## Running Tests
+### 🔹 Run All Tests
 
+```bash
+mvn clean test
+```
 
-<pre>
-### To run all tests with Maven:
-mvn test
+### 🔹 Run Using TestNG Suite
 
-### To run with TestNG:
-mvn test -DsuiteXmlFile=testng.xml
+```bash
+mvn clean test -DsuiteXmlFile=testng.xml
+```
 
-### Run Tests by Tag
+### 🔹 Run Tests by Tag
 
-Use the <code>-Dcucumber.filter.tags</code> system property to target specific tagged scenarios.
+Use the `-Dcucumber.filter.tags` system property to execute specific tagged scenarios.
 
 #### Example: Run Regression Suite
-Run all scenarios tagged with <code>@regression</code>:
 
-<code>mvn clean test -Dcucumber.filter.tags="@regression"</code>
-<code>mvn clean test -DsuiteXmlFile=testng.xml -Dcucumber.filter.tags="@regression"</code>
-</pre>
+```bash
+mvn clean test -Dcucumber.filter.tags="@regression"
+```
 
-Reports (optionally add HTML reports via plugins) will be generated in the target directory.
+Or, using TestNG suite with tag filter:
 
-## Test Report
+```bash
+mvn clean test -DsuiteXmlFile=testng.xml -Dcucumber.filter.tags="@regression"
+```
 
-The latest Allure test report is published and accessible here:
-[Allure Test Report](https://ajaysuryavamshi.github.io/all-about-cucumber/)
+#### Additional Tag Examples:
 
-## Contributing
+| Purpose           | Command Example                                           |
+|------------------|-----------------------------------------------------------|
+| Run Smoke Tests  | `mvn clean test -Dcucumber.filter.tags="@smoke"`          |
+| Run Sanity Suite | `mvn clean test -Dcucumber.filter.tags="@sanity"`         |
+| Run Multiple Tags| `mvn clean test -Dcucumber.filter.tags="@smoke or @sanity"` |
+| Exclude a Tag    | `mvn clean test -Dcucumber.filter.tags="not @wip"`        |
 
-Contributions are welcome! Please read [CONTRIBUTING.md](CONTRIBUTING.md) for guidance.
+> 📝 **Note**: If no tag is provided, a default tag (like `@regression`) will be used via fallback in the runner.
 
-## License
+---
 
-Distributed under the MIT License. See [LICENSE](LICENSE) for more information.
+## 📊 Test Report
+
+After execution, you can generate an **Allure Report**:
+
+```bash
+allure serve target/allure-results
+```
+
+📎 View the published test report here:  
+[🔗 Allure Test Report](https://ajaysuryavamshi.github.io/all-about-cucumber/)
+
+---
+
+## 🤝 Contributing
+
+Contributions, ideas, and improvements are welcome!
+
+Please refer to [CONTRIBUTING.md](CONTRIBUTING.md) before submitting pull requests.
+
+---
+
+## 📄 License
+
+Distributed under the MIT License.  
+See [LICENSE](LICENSE) for full licensing information.
+
+---
