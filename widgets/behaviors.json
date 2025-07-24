@@ -1,1 +1,1 @@
-{"total":1,"items":[{"uid":"8c1895e6cb51ad97260120776cf994ae","name":"OrangeHRM Login","statistic":{"failed":0,"broken":0,"skipped":0,"passed":1,"unknown":0,"total":1}}]}
+{"total":2,"items":[{"uid":"b03268b7854b2a7e702cebfa67ee25ec","name":"Add User in OrangeHRM","statistic":{"failed":0,"broken":1,"skipped":0,"passed":0,"unknown":0,"total":1}},{"uid":"8c1895e6cb51ad97260120776cf994ae","name":"OrangeHRM Login","statistic":{"failed":0,"broken":0,"skipped":0,"passed":1,"unknown":0,"total":1}}]}

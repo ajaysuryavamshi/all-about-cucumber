@@ -1,2 +1,3 @@
 "Epic","Feature","Story","FAILED","BROKEN","PASSED","SKIPPED","UNKNOWN"
-"","OrangeHRM Login","Login attempt with various credentials","0","0","1","0","0"
+"","OrangeHRM Login","Login attempt with various credentials","0","0","2","0","0"
+"","Add User in OrangeHRM","Admin adds a new user with valid details","0","2","0","0","0"
