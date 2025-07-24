@@ -161,7 +161,7 @@ mvn clean test -DsuiteXmlFile=testng.xml -Dcucumber.filter.tags="@regression"
 After execution, you can generate an **Allure Report**:
 
 ```bash
-allure serve target/allure-results
+allure serve allure-results
 ```
 
 📎 View the published test report here:  
