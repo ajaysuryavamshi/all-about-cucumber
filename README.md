@@ -69,6 +69,14 @@ mvn test -DsuiteXmlFile=testng.xml
 
 Reports (optionally add HTML reports via plugins) will be generated in the target directory.
 
+## Test Report
+
+The latest Allure test report is published and accessible here:
+
+[Allure Test Report](https://ajaysuryavamshi.github.io/all-about-cucumber/)
+
+> *Note:* The report link points to the GitHub Pages site deployed from the `gh-pages` branch. Make sure the GitHub Pages is enabled in your repository settings.
+
 ## Contributing
 
 Contributions are welcome! Please read [CONTRIBUTING.md](CONTRIBUTING.md) for guidance.
