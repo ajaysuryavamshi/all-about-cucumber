@@ -6,7 +6,7 @@ import java.io.InputStream;
 import java.util.Properties;
 
 public final class ConfigReader {
-    private static final String PROPERTY_FILE_PATH = "src/main/resources/config.properties";
+    private static final String PROPERTY_FILE_PATH = "src/test/resources/config/config.properties";
     private static final Properties properties = new Properties();
 
     static {

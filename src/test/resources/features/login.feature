@@ -7,8 +7,12 @@ Feature: OrangeHRM Login
     And clicks the login button
     Then the user should see a message "<expectedResult>"
 
+    @smoke @regression
     Examples:
       | username  | password  | expectedResult      |
       | Admin     | admin123  | Dashboard visible   |
+
+    @regression
+    Examples:
       | Admin     | wrongpass | Invalid credentials |
       | wronguser | admin123  | Invalid credentials |

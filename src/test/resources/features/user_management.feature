@@ -1,4 +1,4 @@
-@user_management
+@user_management @regression
 Feature: Add User in OrangeHRM
 
   Scenario Outline: Admin adds a new user with valid details

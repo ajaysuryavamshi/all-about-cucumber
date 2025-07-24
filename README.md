@@ -43,7 +43,32 @@ This project aims to:
 2. Install dependencies:
    mvn clean install
 ## Project Structure
-all-about-cucumber/ ├── src/ │   ├── main/ │   │   └── java/ │   └── test/ │       ├── java/           # Step definitions │       └── resources/ │           └── features/   # Gherkin .feature files ├── pom.xml ├── testng.xml └── .gitignore
+<pre>
+<code>
+all-about-cucumber/
+├── src/
+│   ├── main/
+│   │   └── java/
+│   │       └── com/
+│   │           └── automation/
+│   │               └── config/              # Config utilities
+│   │               └── drivers/             # Driver utilities
+│   ├── test/
+│   │   └── java/
+│   │       └── com/
+│   │           └── automation/
+│   │               └── pages/               # Page Object Model classes
+│   │               └── runner/              # TestNG or JUnit runners
+│   │               └── steps/               # Cucumber step definitions and Hooks
+│   └── resources/
+│       ├── features/                     # Cucumber feature files
+│       └── config/                       # Environment/Test configs (e.g., dev, qa)
+├── testng.xml                            # TestNG suite file
+├── pom.xml                               # Maven configuration
+├── README.md                             # Project documentation
+└── allure-results/                       # Allure report output (in .gitignore)
+</code>
+</pre>
 
 ## Writing Scenarios
 
@@ -72,10 +97,7 @@ Reports (optionally add HTML reports via plugins) will be generated in the targe
 ## Test Report
 
 The latest Allure test report is published and accessible here:
-
 [Allure Test Report](https://ajaysuryavamshi.github.io/all-about-cucumber/)
-
-> *Note:* The report link points to the GitHub Pages site deployed from the `gh-pages` branch. Make sure the GitHub Pages is enabled in your repository settings.
 
 ## Contributing
 
