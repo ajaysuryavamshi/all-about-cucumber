@@ -1,6 +1,6 @@
 package com.automation.steps;
 
-import com.automation.config.ConfigReader;
+import com.automation.config.ConfigManager;
 import com.automation.drivers.DriverManager;
 import com.automation.pages.LoginPage;
 import io.cucumber.datatable.DataTable;
@@ -20,7 +20,7 @@ public class UserManagementSteps {
 
     @Given("the admin is logged in to OrangeHRM")
     public void adminIsLoggedIn() {
-        driver.get(ConfigReader.getApplicationURL());
+        driver.get(ConfigManager.getApplicationURL());
         loginPage.login("Admin", "admin123");
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[text()='Dashboard']")));
     }

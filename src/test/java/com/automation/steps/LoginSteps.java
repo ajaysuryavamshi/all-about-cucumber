@@ -1,6 +1,6 @@
 package com.automation.steps;
 
-import com.automation.config.ConfigReader;
+import com.automation.config.ConfigManager;
 import com.automation.drivers.DriverManager;
 import io.cucumber.java.en.*;
 import org.openqa.selenium.WebDriver;
@@ -13,7 +13,7 @@ public class LoginSteps {
 
     @Given("the user is on the OrangeHRM login page")
     public void userIsOnLoginPage() {
-        driver.get(ConfigReader.getApplicationURL());
+        driver.get(ConfigManager.getApplicationURL());
     }
 
     @When("the user enters username {string} and password {string}")

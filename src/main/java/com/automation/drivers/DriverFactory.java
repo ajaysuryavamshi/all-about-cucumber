@@ -1,6 +1,6 @@
 package com.automation.drivers;
 
-import com.automation.config.ConfigReader;
+import com.automation.config.ConfigManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -18,8 +18,8 @@ import java.net.URL;
 
 public class DriverFactory {
     public static WebDriver createInstance() {
-        String browser = ConfigReader.getBrowser();
-        String runMode = ConfigReader.getRunMode();
+        String browser = ConfigManager.getBrowser();
+        String runMode = ConfigManager.getRunMode();
 
         return switch (runMode) {
             case "LOCAL" -> getLocalDriver(browser);
@@ -79,7 +79,7 @@ public class DriverFactory {
                 throw new RuntimeException("Unsupported browser for GRID: " + browser);
         }
         try {
-            return new RemoteWebDriver(new URL(ConfigReader.getGridUrl()), capabilities);
+            return new RemoteWebDriver(new URL(ConfigManager.getGridUrl()), capabilities);
         } catch (MalformedURLException e) {
             throw new RuntimeException("Invalid grid URL", e);
         }
