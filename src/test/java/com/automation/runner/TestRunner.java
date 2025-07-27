@@ -16,14 +16,17 @@ import org.testng.annotations.DataProvider;
         monochrome = true
 )
 public class TestRunner extends AbstractTestNGCucumberTests {
+
     static {
         String tag = System.getProperty("cucumber.filter.tags", "@regression");
         System.setProperty("cucumber.filter.tags", tag);
     }
+
     @Override
     @DataProvider(parallel = true)
     public Object[][] scenarios() {
         return super.scenarios();
     }
+
 }
 
